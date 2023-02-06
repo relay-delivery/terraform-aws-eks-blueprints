@@ -33,6 +33,11 @@ output "managed_nodegroup_iam_instance_profile_arn" {
   value       = aws_iam_instance_profile.managed_ng[*].arn
 }
 
+output "managed_asg_names" {
+  description = "EKS Managed group ASG names"
+  value       = aws_eks_node_group.managed_ng[*].resources[0].autoscaling_groups[0].name
+}
+
 output "managed_nodegroup_launch_template_id" {
   description = "Launch Template ID for EKS Managed Node Group"
   value       = aws_launch_template.managed_node_groups[*].id
