@@ -52,6 +52,7 @@ locals {
     nvidiaDevicePlugin        = var.enable_nvidia_device_plugin ? module.nvidia_device_plugin[0].argocd_gitops_config : null
     consul                    = var.enable_consul ? module.consul[0].argocd_gitops_config : null
     thanos                    = var.enable_thanos ? module.thanos[0].argocd_gitops_config : null
+    kubeStateMetrics          = var.enable_kube_state_metrics ? module.kube_state_metrics[0].argocd_gitops_config : null
   }
 
   addon_context = {
@@ -78,15 +79,19 @@ locals {
       ap-northeast-2 = "602401143452.dkr.ecr.ap-northeast-2.amazonaws.com",
       ap-northeast-3 = "602401143452.dkr.ecr.ap-northeast-3.amazonaws.com",
       ap-south-1     = "602401143452.dkr.ecr.ap-south-1.amazonaws.com",
+      ap-south-2     = "900889452093.dkr.ecr.ap-south-2.amazonaws.com",
       ap-southeast-1 = "602401143452.dkr.ecr.ap-southeast-1.amazonaws.com",
       ap-southeast-2 = "602401143452.dkr.ecr.ap-southeast-2.amazonaws.com",
       ap-southeast-3 = "296578399912.dkr.ecr.ap-southeast-3.amazonaws.com",
+      ap-southeast-4 = "491585149902.dkr.ecr.ap-southeast-4.amazonaws.com",
       ca-central-1   = "602401143452.dkr.ecr.ca-central-1.amazonaws.com",
       cn-north-1     = "918309763551.dkr.ecr.cn-north-1.amazonaws.com.cn",
       cn-northwest-1 = "961992271922.dkr.ecr.cn-northwest-1.amazonaws.com.cn",
       eu-central-1   = "602401143452.dkr.ecr.eu-central-1.amazonaws.com",
+      eu-central-2   = "900612956339.dkr.ecr.eu-central-2.amazonaws.com",
       eu-north-1     = "602401143452.dkr.ecr.eu-north-1.amazonaws.com",
       eu-south-1     = "590381155156.dkr.ecr.eu-south-1.amazonaws.com",
+      eu-south-2     = "455263428931.dkr.ecr.eu-south-2.amazonaws.com",
       eu-west-1      = "602401143452.dkr.ecr.eu-west-1.amazonaws.com",
       eu-west-2      = "602401143452.dkr.ecr.eu-west-2.amazonaws.com",
       eu-west-3      = "602401143452.dkr.ecr.eu-west-3.amazonaws.com",
