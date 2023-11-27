@@ -18,6 +18,7 @@ data "aws_iam_policy_document" "aws_lb" {
     resources = ["*"]
 
     actions = [
+      "elasticloadbalancing:AddTag",
       "ec2:DescribeAccountAttributes",
       "ec2:DescribeAddresses",
       "ec2:DescribeAvailabilityZones",
