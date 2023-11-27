@@ -18,7 +18,6 @@ data "aws_iam_policy_document" "aws_lb" {
     resources = ["*"]
 
     actions = [
-      "elasticloadbalancing:AddTag",
       "ec2:DescribeAccountAttributes",
       "ec2:DescribeAddresses",
       "ec2:DescribeAvailabilityZones",
@@ -32,6 +31,7 @@ data "aws_iam_policy_document" "aws_lb" {
       "ec2:DescribeVpcPeeringConnections",
       "ec2:DescribeVpcs",
       "ec2:GetCoipPoolUsage",
+      "elasticloadbalancing:AddTag",
       "elasticloadbalancing:DescribeListenerCertificates",
       "elasticloadbalancing:DescribeListeners",
       "elasticloadbalancing:DescribeLoadBalancerAttributes",
