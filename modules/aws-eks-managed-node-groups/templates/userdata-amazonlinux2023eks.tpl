@@ -12,7 +12,7 @@ spec:
     name: ${eks_cluster_id}
     apiServerEndpoint: ${cluster_endpoint}
     certificateAuthority: ${cluster_ca_base64}
-    cidr: ${service_ipv4_cidr}
+    cidr: 10.100.0.0/16
 
 --BOUNDARY
 Content-Type: application/node.eks.aws

@@ -4,7 +4,7 @@ locals {
     enable_node_group_prefix = true
     instance_types           = ["m5.large"]
     capacity_type            = "ON_DEMAND"  # ON_DEMAND, SPOT
-    ami_type                 = "AL2_x86_64" # AL2_x86_64, AL2_x86_64_GPU, AL2_ARM_64, BOTTLEROCKET_x86_64, BOTTLEROCKET_ARM_64
+    ami_type                 = "AL2_x86_64" # AL2_x86_64, AL2_x86_64_GPU, AL2_ARM_64, BOTTLEROCKET_x86_64, BOTTLEROCKET_ARM_64, AL2023_x86_64_STANDARD, AL2023_x86_64_NVIDIA
     subnet_type              = "private"
     subnet_ids               = []
 
