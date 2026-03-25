@@ -12,20 +12,14 @@ spec:
     name: ${eks_cluster_id}
     apiServerEndpoint: ${cluster_endpoint}
     certificateAuthority: ${cluster_ca_base64}
+%{ if length(service_ipv4_cidr) > 0 ~}
+    cidr: ${service_ipv4_cidr}
+%{ else ~}
     cidr: 10.100.0.0/16
-
---BOUNDARY
-Content-Type: application/node.eks.aws
-
----
-apiVersion: node.eks.aws/v1alpha1
-kind: NodeConfig
-spec:
+%{ endif ~}
   kubelet:
     config:
       shutdownGracePeriod: 30s
-      featureGates:
-        DisableKubeletCloudCredentialProviders: true
 
 --BOUNDARY
 
