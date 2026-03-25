@@ -12,18 +12,14 @@ spec:
     name: ${eks_cluster_id}
     apiServerEndpoint: ${cluster_endpoint}
     certificateAuthority: ${cluster_ca_base64}
-%{ if length(service_ipv4_cidr) > 0 ~}
-    cidr: ${service_ipv4_cidr}
-%{ else ~}
     cidr: 10.100.0.0/16
-%{ endif ~}
   kubelet:
     config:
       shutdownGracePeriod: 30s
 
 --BOUNDARY
-
 Content-Type: text/x-shellscript; charset="us-ascii"
+
 #!/bin/bash
 set -ex
 
